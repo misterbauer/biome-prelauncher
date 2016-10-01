@@ -1,12 +1,21 @@
 - achieved = @user.achieved(prize)
 
 .prize{class: "prize #{'active-prize' if achieved}"}
-	%span.prize-number
-		= prize.number_of_referrals
+  %span.prize-number
+    = prize.number_of_referrals
 
-	- if prize.image.present?
-		.image-container
-			= image_tag(prize.image.url, class: "img-circle")
+  - if prize.number_of_referrals == 5
+    .image-container
+      = image_tag("CA-square.png", class: "img-circle")
+  - if prize.number_of_referrals == 10
+    .image-container
+      = image_tag("PB-square.jpg", class: "img-circle")
+  - if prize.number_of_referrals == 25
+    .image-container
+      = image_tag("EB-square.jpg", class: "img-circle")
+  - if prize.number_of_referrals == 50
+    .image-container
+      = image_tag("FE-square.jpg", class: "img-circle")
 
-	%p.prize-name
-		= prize.name
+  %p.prize-name
+    = prize.name
