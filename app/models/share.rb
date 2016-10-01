@@ -20,7 +20,7 @@ class Share < ActiveRecord::Base
 	end
 
 	def twitter_link(root_url)
-		"https://twitter.com/intent/tweet?text=#{URI.escape(data[:twitter_message])}&url=#{user.referral_url(root_url)}"
+		"https://twitter.com/intent/tweet?text=#{CGI.escape Setting::TWEET_BODY}#{URI.escape(data[:twitter_message])}&url=#{user.referral_url(root_url)}"
 	end
 
 	def linkedin_link(root_url)

@@ -24,6 +24,8 @@ class Setting < ActiveRecord::Base
 	MAILCHIMP_API_KEY = ENV["MAILCHIMP_API_KEY"]
 	MAILCHIMP_LIST_ID = ENV["MAILCHIMP_LIST_ID"]
 
+	TWEET_BODY="Biome by @ryangallows is coming to Kickstarter—and I’ll be reading it for free. "
+
 	def self.cover_image
 		(Setting.first || Setting.new).cover_image
 	end
