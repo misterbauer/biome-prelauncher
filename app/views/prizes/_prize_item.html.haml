@@ -1,0 +1,12 @@
+- achieved = @user.achieved(prize)
+
+.prize{class: "prize #{'active-prize' if achieved}"}
+	%span.prize-number
+		= prize.number_of_referrals
+
+	- if prize.image.present?
+		.image-container
+			= image_tag(prize.image.url, class: "img-circle")
+
+	%p.prize-name
+		= prize.name

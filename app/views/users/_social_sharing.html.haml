@@ -1,0 +1,6 @@
+#social-sharing
+	%ul.contact-socials.clearfix
+		%a.foo_social.ico-facebook{:href => @user.social_url("facebook"), target: "_blank"}
+			=image_tag "facebook.png", :class => "fa"
+		%a.foo_social.ico-twitter{:href => @user.social_url("twitter"), target: "_blank"}
+			=image_tag "twitter.png", :class => "fa", :id => "twitter-icon"

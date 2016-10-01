@@ -1,0 +1,4 @@
+= simple_form_for @user, html: {novalidate: false, class: "form-inline"} do |f|
+	= f.input :email, as: :email, label: false, placeholder: "you@email.com", input_html: {required: true }
+	.form-group.submit
+		<button type="submit" name="commit" id='enter-colony-button' class="btn btn btn-branded"><b>ENTER</b> THE <b>COLONY</b> ></button>

@@ -1,0 +1,31 @@
+#refer{style: "background-image: #{Setting.additional_image.present? ? 'url(' + asset_url(Setting.additional_image.url) + ');' : 'auto'}"}
+	.row
+		.col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1#referral-content
+			.col-md-4#cover-image-container
+				=image_tag "cover.jpg", id:"cover-image"
+			.col-md-8#referral-copy
+				=image_tag "youre-in.png", id:"youre-in-image"
+				#copy			
+					%h1 Share the story with friends and earn a free copy.
+					%h3 By sharing your unique link by email, Facebook, and Twitter, <b>you’ll unlock rewards for each friend who signs up.</b>
+				.social-icon-relative-div
+					.row.social-icons
+						.col-sm-9.col-xs-12.referral-links
+							%input.form-control{value: "#{@user.referral_url(root_url)}"}
+						.col-sm-3.col-xs-12.referral-links
+							= render partial: "social_sharing"
+
+%aside.text-center
+	%h4
+		%strong= pluralize(@user.number_of_referrals, 'friend')
+		%span have joined so far. 
+		
+- if Prize.all.any?
+	%section#prizes
+		.progressbar{style: "width: #{@user.progress * 100}%"}
+			.progress-box
+		= render partial: "prizes/prize_item", collection: Prize.all.order("number_of_referrals asc"), as: :prize
+
+
+
+%footer#footer <em>Biome</em> ships to the <b>United States</b> and <b>Canada</b>. Read full <a href="#">terms and conditions.</a>
