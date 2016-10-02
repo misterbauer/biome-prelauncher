@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   end
 
   root "users#new"
-  get "privacy" => "pages#privacy"
+  get "terms" => "pages#terms"
 
 
 end

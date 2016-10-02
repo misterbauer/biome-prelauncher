@@ -1,108 +1,111 @@
+$review-pane-height: 48px;
+$footer-height: 40px;
+$landing-page-background: image-url("landing-background.jpg");
+$show-page-background: image-url("user-background.jpg");
+
 #content-wrapper {
-    width: 100%;
+  width: 100%;
 }
 
-#main{
-	height: 100vh;
-	background-size: cover;
-	background-repeat: no-repeat;
-  background-image: image-url("landing-background.jpg");
+#main {
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: $landing-page-background;
   background-position: center;
-	top: 0px;
-	width: 100%;
-	display: table;
+  top: 0px;
+  width: 100%;
+  display: table;
+  padding: $review-pane-height + 20 0 $footer-height 0;
+  overflow: auto;
 }
 
-.cover{
-	margin-left: auto;
-	margin-right: auto;
-	text-align: center;
-	vertical-align: middle;
-	display: table-cell;
-  opacity: .95;  
-  color: rgba(255,255,255,.8);
+.cover {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  vertical-align: middle;
+  display: table-cell;
+  opacity: .95;
+  color: rgba(255, 255, 255, 0.8);
+  small {
+    font-size: 16px;
+    color: #FFF;
+    font-weight: 400;
+    text-transform: none;
+    text-align: center;
+    margin: 0px auto;
+    display: block;
+  }
 }
 
-.cover-title{
-	width: 250px;
+.cover-title {
+  width: 300px;
 }
 
-.cover-subtitle{
-	font-size: 34px;
-	color: #FFF;
-	text-align: center;
-	margin-top: 60px;
-  margin-bottom: 120px;
-	text-transform: none;
+.cover-subtitle {
+  font-size: 30px;
+  color: #FFF;
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 200px;
+  text-transform: none;
   line-height: 1.2;
 }
 
 #new_user {
-	width: 100%;
+  width: 100%;
   max-width: 800px;
-	margin: 10px auto;
-	display: inline-block;
-	border: medium none;
-}
-
-#new_user .form-group{
-	display: inline-block;
-}
-
-#new_user .form-control{
-	height: 50px;
-	border-radius: 0px;
-	font-size: 18px;
-	width: 100%;
-	float: left;
-	display: inline-block;	
-}
-
-#new_user .btn {
+  margin: 10px auto;
+  display: inline-block;
+  border: medium none;
+  .form-group {
+    display: inline-block;
+  }
+  .form-control {
+    height: 50px;
+    border-radius: 0px;
+    font-size: 18px;
+    width: 100%;
+    float: left;
+    display: inline-block;
+  }
+  .btn {
     height: 50px;
     border-radius: 0px;
     font-size: 13px;
     font-family: "nexa";
     width: 100%;
-    background-color: rgba(240,32,0,.8);
+    background-color: rgba(240, 32, 0, 0.8);
     color: #FFF;
     float: left;
     display: inline-block;
     margin-left: -5px;
+  }
 }
 
 .user_email {
-   width: 45%;
+  width: 45%;
 }
 
-#user_email {  
+#user_email {
   height: 50px;
 }
 
 .submit {
-    width: 30%;
-}
-
-.cover small{
-	font-size: 16px;
-	color: #FFF;
-	font-weight: 400;
-	text-transform: none;
-	text-align: center;
-	margin: 0px auto;
-	display: block;	
+  width: 30%;
 }
 
 .review {
-    opacity: .9;
-    position: absolute;
-    top: 0px;
-    width: 100%;
-    color: rgba(255,255,255,.8);
-    background: rgba(150,0,0,.5);
-    line-height: 48px;
-    font-size: 16px;
-    text-align: center;
+  opacity: .9;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  color: rgba(255, 255, 255, 0.8);
+  background: rgba(150, 0, 0, 0.5);
+  line-height: $review-pane-height;
+  font-size: 16px;
+  text-align: center;
 }
 
 #referral-content {
@@ -111,69 +114,26 @@
   opacity: .95;
 }
 
-#referral-copy {
-  height: 100%;
-}
-
-#refer{
-	height: 540px;
-	background-size: cover;
-	background-repeat: no-repeat;
-  background-image: image-url("user-background.jpg");
-	top: 0px;
-	width: 100%;
-	display: table;
-	padding-top: 50px;
-	margin-bottom: 50px;
-	background-size: cover;
-	border-bottom: medium none;	
-}
-
-#cover-image {
-  height: 100%;
-  max-width: 100%;
-}
-
-#cover-image-container {
-  height:100%;
-}
-
-#youre-in-image {
-  margin-bottom: 24px;
-}
-
-#copy h3{
-	font-size: 18px;
-	color: #FFF;
-  margin-bottom: 30px;
-	text-align: left;
-	width: auto;
-  line-height: 1.1em;
-}
-
-#copy h1 {
-	font-size: 38px;
-	color: #FFF;
-	margin-bottom: 20px;
-	text-align: left;
-	width: auto;
-  line-height: 1.2em;
-}
-
-.referral-links {  
-    height: 40px;
-    padding: 0 !important;
-  }
-
-#refer input {
+#refer {
+  height: 540px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: $show-page-background;
+  top: 0px;
+  width: 100%;
+  display: table;
+  padding-top: 50px;
+  margin-bottom: 50px;
+  background-size: cover;
+  border-bottom: medium none;
+  input {
     border-radius: 0px;
     font-size: 14px;
     width: 100%;
     text-align: center;
     height: 40px;
-}
-
-#refer p{
+  }
+  p {
     font-size: 16px;
     color: #FFF;
     font-weight: 400;
@@ -181,384 +141,344 @@
     text-align: left;
     width: auto;
     text-transform: none;
+  }
 }
 
-.foo_social
-{
+#cover-image {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+#cover-image-container {
+  height: 100%;
+}
+
+#youre-in-image {
+  width: 120px;
+}
+
+#copy {
+  h3 {
+    font-size: 18px;
+    color: #FFF;
+    margin-bottom: 30px;
+    text-align: left;
+    width: auto;
+    line-height: 1.4em;
+  }
+  h1 {
+    font-size: 38px;
+    color: #FFF;
+    margin-bottom: 20px;
+    text-align: left;
+    width: auto;
+    line-height: 1.2em;
+  }
+}
+
+.referral-links {
+  height: 40px;
+  padding: 0 !important;
+}
+
+.foo_social {
   text-decoration: none !important;
   margin-right: 10px;
 }
 
 .fa {
-  height:40px;
+  height: 40px;
 }
 
-
-.social-icons{
-    bottom: 0;
-    position: absolute;
-    width: 100%;
-    margin: 0px;
+.social-icons {
+  width: 100%;
+  margin: 0px;
 }
 
 .contact-socials {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .contact-socials li {
-    padding: 0px 18px;
-    float: left;
-    transition: all 250ms ease-in-out 0s;
-    text-align: center;
+  padding: 0px 18px;
+  float: left;
+  transition: all 250ms ease-in-out 0s;
+  text-align: center;
 }
 
-aside h4{
-    font-size: 18px;
-    color: #333;
-    font-weight: 400;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    text-transform: none;
+aside h4 {
+  font-size: 18px;
+  color: #333;
+  font-weight: 400;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  text-transform: none;
 }
 
-.cover footer {
-  position: absolute;
+#new-user-footer {
+  position: relative;
+  margin-top: -$footer-height;
+  height: $footer-height;
+  clear: both;
   width: 100%;
-  bottom: 8px;
-  color: rgba(255, 255, 255,.9);
-  padding: 0 10px;
-}
-.cover footer a {
-  color: rgba(255, 255, 255,.9)
+  text-align: center;
+  color: rgba(255, 255, 255, 0.9);
+  padding: 10px;
+  a {
+    color: rgba(255, 255, 255, 0.9) !important;
+  }
 }
 
 footer a {
   font-weight: 600;
 }
 
-
-#PrivacyInfo
-{
-    display: none;
-    border-radius: 2px;
-    position: fixed;
-    left: 50%;
-    background-color: rgba(255, 255, 255, 0.9);
-    z-index: 100;
-    margin-top: -130px;
-    width: 300px;
-    margin-left: -150px;
-    padding: 15px;
-    font-size: 12px;
-    color: #222;
+#PrivacyInfo {
+  display: none;
+  border-radius: 2px;
+  position: fixed;
+  left: 50%;
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: 100;
+  bottom: 50px;
+  width: 400px;
+  margin-left: -200px;
+  padding: 15px;
+  font-size: 15px;
+  color: #222;
 }
 
 @media screen and (max-width: 1300px) {
   #copy h1 {
     font-size: 30px;
   }
-
-  #copy h3{
+  #copy h3 {
     font-size: 16px;
   }
 }
 
-@media screen and (max-width: 992px){
+@media screen and (max-width: 992px) {
   #copy h1 {
     font-size: 38px;
   }
-
   #cover-image-container {
-    display:none;
+    display: none;
   }
-
   #refer article p.small {
     display: none;
   }
-
   #refer figcaption {
     display: block;
   }
-
-    #refer figcaption{
-      margin-top: 10px;
-    }
-
-
-    #refer h2 {
-      padding-top: 20px;
-      font-size: 22px;
-      padding-bottom: 15px;
-    }
-
-
+  #refer figcaption {
+    margin-top: 10px;
+  }
+  #refer h2 {
+    padding-top: 20px;
+    font-size: 22px;
+    padding-bottom: 15px;
+  }
 }
 
-@media screen and (max-width: 850px){
-  body::-webkit-scrollbar { 
-    display: none; 
-  } 
-
-
-  #refer figure{
+@media screen and (max-width: 850px) {
+  body::-webkit-scrollbar {
+    display: none;
+  }
+  #refer figure {
     margin-top: 18px;
   }
-
   #refer h2 {
     line-height: 30px;
   }
-
-
 }
 
-
-@media screen and (max-width: 800px){
-
-
-
+@media screen and (max-width: 800px) {
   .refer-left {
     padding: 0;
   }
-
-  #refer figure{
+  #refer figure {
     margin-top: 18px;
   }
-
   #refer h2 {
     line-height: 30px;
   }
-
-
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) {
   #refer h1 {
     font-size: 25px;
     font-weight: 600;
     margin: 15px auto 20px;
   }
-  
-  #refer p{
+  #refer p {
     line-height: 1.15;
   }
-
-  .cover-title{
+  .cover-title {
     width: 230px;
   }
-
   .social-icons {
     position: relative;
   }
-
   #social-sharing {
     text-align: center;
     margin-top: 10px;
   }
-
-  .foo_social
-  {
+  .foo_social {
     margin: 0 6px;
   }
-
   #referral-content {
     text-align: center;
   }
-
-  .cover-subtitle {  
+  .cover-subtitle {
     font-size: 26px;
     margin-top: 40px;
-    margin-bottom: 80px;
+    margin-bottom: 150px;
   }
-
   .review {
     display: none;
   }
-
+  #main {
+    padding-top: 0;
+  }
 }
 
-@media screen and (max-width: 767px){
-
-  #reinforcement p{
+@media screen and (max-width: 767px) {
+  #reinforcement p {
     text-align: center;
   }
-
   #copy h1, #copy h3, #refer p {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
   }
-
-  #refer input{
+  #refer input {
     margin-left: auto;
     margin-right: auto;
   }
-
   #refer p {
     font-size: 17px;
   }
-
-
 }
 
-@media screen and (max-width: 600px){
+@media screen and (max-width: 600px) {
   .cover-heading {
     font-size: 5vw;
   }
-
   footer {
     font-size: 11px;
   }
-
   footer a {
     font-size: 11px !important;
   }
-  
   #new_user {
     margin: 0;
-  }
-
-  #new_user input {
-    font-size: 20px;
-  }
-
-  #new_user .user_email {
-    margin-right: -4px;
-  }
-
-    #new_user .submit {
-    min-width: 80px;
-  }
-
-  .cover footer {
-    width: auto;
-  }
-
-  #new_user .btn {
-    margin-left: 0;
-    font-size: 12px;
+    input {
+      font-size: 20px;
+    }
+    .user_email {
+      margin-right: -4px;
+    }
+    .submit {
+      min-width: 80px;
+    }
+    .btn {
+      margin-left: 0;
+      font-size: 12px;
+    }
   }
   #main {
-    padding: 0 10px
+    padding-left: 10px;
+    padding-right: 10px;
   }
-
 }
 
-@media screen and (max-width: 500px){
-
-    #new_user .user_email {
+@media screen and (max-width: 500px) {
+  #new_user .user_email {
     width: 60%;
   }
-
-    #new_user .submit {
+  #new_user .submit {
     width: 40%;
   }
-
-  #prizes{
-  	margin: 100px 20px;
+  #prizes {
+    margin: 100px 20px;
   }
 }
 
-
-
-@media screen and (max-width: 450px){
-     #new_user input {
-      font-size: 18px !important;
+@media screen and (max-width: 450px) {
+  #new_user input {
+    font-size: 18px !important;
   }
-
-    .cover-heading {
+  .cover-heading {
     font-size: 30px;
   }
-
-    #new_user {
+  #new_user {
     width: 100%;
-  } 
-
-    #new_user .user_email {
+  }
+  #new_user .user_email {
     width: 55%;
   }
-
-    #new_user .submit {
+  #new_user .submit {
     width: 45%;
   }
-
   .contact-socials li {
     padding: 0px 10px;
   }
-
 }
 
-
-@media screen and (max-width: 360px){
-
-  #refer h1 {
-    font-size: 27px;
+@media screen and (max-width: 360px) {
+  #refer {
+    h1 {
+      font-size: 27px;
+    }
+    p {
+      font-size: 15px;
+    }
+    figcaption p {
+      font-size: 14px;
+    }
   }
-
-    .cover-heading {
+  .cover-heading {
     font-size: 25px;
   }
-  
-    #new_user .submit {
-      min-width: 60px;
+  #new_user .submit {
+    min-width: 60px;
   }
-
-  #refer p {
-    font-size: 15px;
-  }
-
-  #refer figcaption p {
-    font-size: 14px;
-  }
-
 }
 
-
-
-@media screen and (max-width: 320px){
-    #new_user input {
-      font-size: 16px !important;
+@media screen and (max-width: 320px) {
+  #new_user input {
+    font-size: 16px !important;
   }
-
-    #new_user .user_email {
-   width: 55%;
+  #new_user .user_email {
+    width: 55%;
   }
-
-    #new_user .submit {
+  #new_user .submit {
     width: 45%;
   }
-
   .contact-socials i.fa {
-      font-size: 25px;
+    font-size: 25px;
   }
-
-
 }
 
-@media screen and (max-width: 300px){
-
-    .contact-socials li {
-      padding: 0 5px;
+@media screen and (max-width: 300px) {
+  .contact-socials li {
+    padding: 0 5px;
   }
-
   .contact-socials i.fa {
-      font-size: 22px;
+    font-size: 22px;
   }
-
-	#new_user .btn{
-		margin-left: auto;
-	}
-
-    #new_user .form-group{
+  #new_user .btn {
+    margin-left: auto;
+  }
+  #new_user .form-group {
     width: 100%;
   }
-
-    #new_user .submit{
+  #new_user .submit {
     margin-top: -15px;
   }
-
-    #new_user input {
-      width: 100% !important;
-      font-size: 18px !important;
+  #new_user input {
+    width: 100% !important;
+    font-size: 18px !important;
   }
 }
