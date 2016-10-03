@@ -22,20 +22,21 @@ module Prelaunch
     # config.i18n.default_locale = :de
 
 
-    # config.action_mailer.smtp_settings = {
-    #     address:              'smtp.mandrillapp.com',
-    #     port:                 587,
-    #     user_name:            'YOUR_MANDRILL_LOGIN',
-    #     password:             'YOUR_MANDRILL_API_KEY',
-    #     authentication:       :login,
-    #     enable_starttls_auto: true  
-    # }
+     config.action_mailer.smtp_settings = {
+         address:              'smtp.mandrillapp.com',
+         port:                 587,
+         user_name:            ENV["MANDRILL_USERNAME"],
+         password:             ENV["MANDRILL_API_KEY"],
+         authentication:       :login,
+         enable_starttls_auto: true,
+         domain:               'readbiome.com'
+     }
 
     config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
     config.active_job.queue_adapter = :delayed_job
     
     config.action_mailer.default_url_options = { 
-        :host => "portal.example.com", 
+        :host => "readbiome.com", 
         :protocol => 'https' 
     }
 

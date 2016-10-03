@@ -73,9 +73,8 @@ form .form-group label {
   z-index: 1000;
   position: absolute;
   width: 100%;
-  opacity: .8;
   font-size: 16px;
-  padding: 10px;
+  height: 48px;
 }
 
 .alert.alert-success {
@@ -175,4 +174,8 @@ form .form-control {
   color: #000;
   margin: 50px auto;
   text-align: center;
+}
+
+.terms a {
+  color: #000 !important;
 }

@@ -52,7 +52,7 @@ class UsersController < ApplicationController
 	        end
 	    else
 			respond_to do |format|
-	            format.html {redirect_to root_path, alert: "Subscribing multiple emails is not allowed."}
+	            format.html {redirect_to root_path, alert: "Subscribing more than 2 emails is not allowed."}
 	        end
 	    end
 	end

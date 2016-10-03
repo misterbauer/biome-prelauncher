@@ -3,7 +3,7 @@
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %meta{:charset => "utf-8"}/
-    %title Untitled
+    %title Biome
     :css
       body {
         font-family: 'Nexa', Helvetica, Arial, sans-serif;
@@ -16,7 +16,7 @@
     %br/
     %br/
     In the meantime, I’m beyond excited to give you the chance to read Biome for  free. All you have to do is share
-    %a{:href => "#{@user.referral_url(root_url)}", :target => "_blank"} your unique link
+    %a{:href => @user.referral_url(root_url), :target => "_blank"} your unique link
     by email, Facebook, and Twitter, and you’ll unlock rewards for each friends who signs up.
     %b The top tier will receive a signed first edition copy of Biome in paperback.
     Which is, like, the best thing you can ever receive.
@@ -28,7 +28,7 @@
           %table{:border => "0", :cellpadding => "0", :cellspacing => "0"}
             %tr
               %td{:align => "center", :bgcolor => "#e9703e", :style => "-webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px;"}
-                %a{:href => "\#{@user.referral_url(root_url)}", :style => "font-size: 16px; font-family: 'nexa', Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; text-decoration: none; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; padding: 8px 12px; border: 1px solid #e9703e; display: inline-block;", :target => "_blank"} SHARE AND EARN
+                %a{:href => href="mailto:?subject=#{@email_share_subject}&body=#{@user_share_email_body}", :style => "font-size: 16px; font-family: 'nexa', Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; text-decoration: none; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; padding: 8px 12px; border: 1px solid #e9703e; display: inline-block;", :target => "_blank"} SHARE AND EARN
     %br/
     Remember,
     = succeed "." do
@@ -60,6 +60,6 @@
     %br/
     %b Ryan Galloway
     %br/
-    ryan-galloway.com | @ryangallows
+    <a href="http://www.ryan-galloway.com/biome/", target="_blank">ryan-galloway.com</a> | <a href="http://twitter.com/ryangallows", target="_blank">@ryangallows</a>
     %br/
     %br/

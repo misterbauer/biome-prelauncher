@@ -4,7 +4,8 @@ class User < ActiveRecord::Base
     has_many :shares
 
     validates :email, uniqueness: true, format: { with: Devise::email_regexp, message: "Invalid email format." }, presence: true
-    #validates :ip_address, presence: true, uniqueness: true
+    validates :ip_address, presence: true
+    validate :ip_uniqueness_check
 
     before_create :set_referral_code
     after_create :add_user_to_mailchimp
@@ -79,6 +80,13 @@ class User < ActiveRecord::Base
 
     private
 
+    def ip_uniqueness_check
+        numberOfUsersWithSameIp = User.where(:ip_address == ip_address).count
+        if (numberOfUsersWithSameIp > 1)
+            errors.add(:ip_address, "You may only register 2 email addresses.")
+        end
+    end
+
     def mailchimp_object
         Gibbon::Request.new(api_key: Setting::MAILCHIMP_API_KEY)
     end
@@ -90,11 +98,8 @@ class User < ActiveRecord::Base
 
     def mailchimp_subscribe
         begin
-            puts "Subscribing user to list"
             contact = mailchimp_object.lists(Setting::MAILCHIMP_LIST_ID).members.create(body: {email_address: email, status: "subscribed"})
-            puts "Subscribed --------------------------------------"
         rescue Gibbon::MailChimpError => ex
-            puts "Error subscribing!!!!!!!!!!!!!!!!"
             print ex.body
         end
     end
@@ -112,7 +117,7 @@ class User < ActiveRecord::Base
     end
 
     def welcome_email
-        UserMailer.delay.sign_up_email(self)
+        UserMailer.sign_up_email(self).deliver
     end
 
 end
