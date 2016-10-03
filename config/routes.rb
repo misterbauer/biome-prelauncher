@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   root "users#new"
   get "terms" => "pages#terms"
 
+  get "*path", to: redirect('/') #redirects all errors to root
 end
