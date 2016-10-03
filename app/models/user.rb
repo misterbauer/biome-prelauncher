@@ -81,9 +81,9 @@ class User < ActiveRecord::Base
     private
 
     def ip_uniqueness_check
-        numberOfUsersWithSameIp = User.where(:ip_address == ip_address).count
+        numberOfUsersWithSameIp = User.where(ip_address: ip_address).count
         if (numberOfUsersWithSameIp > 1)
-            errors.add(:ip_address, "You may only register 2 email addresses.")
+            errors.add(:ip_address, "There are 2 emails from this IP address")
         end
     end
 
