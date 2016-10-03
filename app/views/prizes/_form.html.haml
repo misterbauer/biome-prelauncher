@@ -5,14 +5,14 @@
 		.col-sm-4
 			= f.input :name, as: :string, label: "Name", placeholder: "Prize name", required: false, input_html: {required: true }
 
-	.form-group.form-group-sm
-		.col-sm-4
-			= f.input :image, as: :file, label: "Image", required: false	
+	/
+		.form-group.form-group-sm
+			.col-sm-4
+				= f.input :image, as: :file, label: "Image", required: false	
 			
 	.form-group.form-group-sm
 		.col-sm-4
 			= f.input :number_of_referrals, as: :integer, label: "Number of referrals", required: false, placeholder: "Number of referrals", input_html: {required: true }
-
 
 
 	%legend Save a prize
