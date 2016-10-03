@@ -39,7 +39,7 @@ $(document).on('page:change', function() {
   var reviews = [
   '“[A] rugged, tenacious story. The ending, meanwhile, satisfies on every level.” —Kirkus Reviews',
   '“[I] simply let it take me on a wild, extraterrestrial ride.” —Anne Elisabeth Stengl, award-winning author',
-  '“A real page-turner, reminiscent of both The Hundred and Doctor Who.” —India Edghill, author,',
+  '“A real page-turner, reminiscent of both The Hundred and Doctor Who.” —India Edghill, author',
   '“[E]xtremely engaging. I can’t wait to read a sequel.” —Hannah Alexander, author'];
   
 
