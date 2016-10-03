@@ -37,7 +37,7 @@ module Prelaunch
     
     config.action_mailer.default_url_options = { 
         :host => "readbiome.com", 
-        :protocol => 'https' 
+        :protocol => 'http' 
     }
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
