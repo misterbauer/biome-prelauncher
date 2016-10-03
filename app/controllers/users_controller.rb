@@ -32,6 +32,11 @@ class UsersController < ApplicationController
   end
 
   def show
+    if !@user
+      @user = User.new
+      redirect_to '/', notice: "User does not exist."
+      return
+    end
     respond_to do |format|
       format.html
     end
